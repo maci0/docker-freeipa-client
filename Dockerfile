@@ -8,6 +8,8 @@ RUN yum -y install freeipa-client python-dbus
 RUN yum clean all
 
 ADD ipa-client-install.service /etc/systemd/system/ipa-client-install.service
+ADD ntpd.service /etc/systemd/system/ntpd.service
+
 ADD start.sh /start.sh
 
 RUN systemctl enable ipa-client-install
